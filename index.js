@@ -16,7 +16,7 @@ btnAdd.addEventListener('click', function(e) {
         const ul = document.getElementById('todolist');
         ul.appendChild(li);
 
-        inputAdd.value = "";
+        inputAdd.value = '';
 
         check.addEventListener('change', function(e) {
             if(e.target.checked) {
