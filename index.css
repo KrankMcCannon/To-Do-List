@@ -1,6 +1,14 @@
 .inputText {
     padding: 10px;
+    font-size: 17px;
+    border-radius: 3px;
+    border: 1.5px solid rgba(0, 0, 0, 0.6);
+    width: 75px;
 }
+
+.inputText::-webkit-calendar-picker-indicator {
+    opacity: 100;
+ }
 
 .dropBtn {
     background-color: #3498D3;
@@ -16,28 +24,17 @@
 }
 
 .dropdown {
-    position: relative;
     display: inline-block;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
+/*
+    background-color: #dc3545;
+    background-color: #ffc107;
+    background-color: #198754;
+*/
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
+label {
+    font-size: 27px;
 }
 
 .show {
@@ -48,13 +45,26 @@
     text-decoration: line-through;
 }
 
+#whatodo {
+    padding: 10px;
+    font-size: 17px;
+    border-radius: 3px;
+    border: 1.5px solid rgba(0, 0, 0, 0.6)
+}
+
+#buttonAdd {
+    width: 60px;
+    height: 44px;
+}
+
 #whatodo, #buttonAdd {
     display: inline-block;
+    border-radius: 3px;
 }
 
 .check, .name {
     padding: 5px;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 table {
@@ -83,4 +93,16 @@ td input {
 td {
     padding: 5px;
     font-size: 34px;
+}
+
+.high {
+    background-color: #dc3545;
+}
+
+.medium {
+    background-color: #ffc107;
+}
+
+.low {
+    background-color: #198754;
 }

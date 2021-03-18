@@ -11,20 +11,21 @@
         <h1>To-Do List</h1>
 
         <div>
-            <input type="text" id="whatodo" class="inputText"/>
+            <input type="text" id="whatodo" />
                 <div class="dropdown">
-                    <button onClick="dropDown()" class="dropBtn">Priorita'</button>
-                    <div id="dropDownList" class="dropdown-content">
-                        <a href="#">Alta</a>
-                        <a href="#">Media</a>
-                        <a href="#">Bassa</a>
-                    </div>
+                    <label for="priorities">Priorita':</label>
+                    <input type="text" list="dropDownList" class="inputText" />
+                    <datalist name="priorities" id="dropDownList">
+                        <option>Alta</option>
+                        <option>Media</option>
+                        <option>Bassa</option>
+                    </datalist>
                 </div>
             <button type="button" id="buttonAdd" class="dropBtn">ADD</button>
         </div>
 
         <div>
-            <table>
+            <table class="high">
                 <thead>
                     <tr>
                         <th class="check">Check</th>
@@ -36,7 +37,7 @@
                 </tbody>
             </table>
     
-            <table>
+            <table class="medium">
                 <thead>
                     <tr>
                         <th class="check">Check</th>
@@ -48,7 +49,7 @@
                 </tbody>
             </table>
     
-            <table>
+            <table class="low">
                 <thead>
                     <tr>
                         <th class="check">Check</th>
