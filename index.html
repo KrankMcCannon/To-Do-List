@@ -10,10 +10,56 @@
     <body>
         <h1>To-Do List</h1>
 
-        <input type="text" id="whatodo"/>
-        <button type="button" id="buttonAdd">ADD</button>
+        <div>
+            <input type="text" id="whatodo" class="inputText"/>
+                <div class="dropdown">
+                    <button onClick="dropDown()" class="dropBtn">Priorita'</button>
+                    <div id="dropDownList" class="dropdown-content">
+                        <a href="#">Alta</a>
+                        <a href="#">Media</a>
+                        <a href="#">Bassa</a>
+                    </div>
+                </div>
+            <button type="button" id="buttonAdd" class="dropBtn">ADD</button>
+        </div>
 
-        <ul id="todolist"></ul>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="check">Check</th>
+                        <th class="name">Name</th>
+                    </tr>
+                </thead>
+                <tbody id="todolist1">
+                    <!-- to-do list content -->
+                </tbody>
+            </table>
+    
+            <table>
+                <thead>
+                    <tr>
+                        <th class="check">Check</th>
+                        <th class="name">Name</th>
+                    </tr>
+                </thead>
+                <tbody id="todolist2">
+                    <!-- to-do list content -->
+                </tbody>
+            </table>
+    
+            <table>
+                <thead>
+                    <tr>
+                        <th class="check">Check</th>
+                        <th class="name">Name</th>
+                    </tr>
+                </thead>
+                <tbody id="todolist3">
+                    <!-- to-do list content -->
+                </tbody>
+            </table>
+        </div>
 
         <script type="text/javascript" src="index.js"></script>
     </body>
