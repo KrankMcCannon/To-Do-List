@@ -1,15 +1,11 @@
 const btnAdd = document.getElementById('buttonAdd');
 const btnCategory = document.getElementById('dropBtn');
-const dropList = document.getElementById('dropDownList');
+const dropList = document.getElementById('dropInput');
 const inputAdd = document.getElementById('whatodo');
 
 const table1 = document.getElementById('todolist1');
 const table2 = document.getElementById('todolist2');
 const table3 = document.getElementById('todolist3');
-
-function dropDown() {
-    dropList.classList.toggle('show');
-}
 
 window.onclick = function(e) {
     if(!e.target.matches('.dropBtn')) {
@@ -43,9 +39,18 @@ btnAdd.addEventListener('click', function(e) {
     tdcheck.appendChild(check);
     tdname.appendChild(text);
 
-    table1.appendChild(tr);
+    let dropValue = dropList.value;
+
+    if(value != -1 && dropValue == "Alta") {
+        table1.appendChild(tr);
+    } else if(value != -1 && dropValue == "Media") {
+        table2.appendChild(tr);
+    } else if(value != -1 && dropValue == "Bassa") {
+        table3.appendChild(tr);
+    }
 
     inputAdd.value = '';
+    dropList.value = '';
 
     check.addEventListener('change', function(e) {
         if(e.target.checked) {
