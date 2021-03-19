@@ -1,3 +1,7 @@
+h1 {
+    margin-left: 15px;
+}
+
 .inputText {
     padding: 10px;
     font-size: 17px;
@@ -41,6 +45,7 @@ label {
 
 #whatodo {
     padding: 10px;
+    margin-left: 15px;
     font-size: 17px;
     border-radius: 3px;
     border: 1.5px solid rgba(0, 0, 0, 0.6)

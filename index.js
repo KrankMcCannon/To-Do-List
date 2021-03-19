@@ -7,6 +7,9 @@ const table1 = document.getElementById('todolist1');
 const table2 = document.getElementById('todolist2');
 const table3 = document.getElementById('todolist3');
 
+const tasks = document.getElementById('task');
+const clearTasks = document.getElementById('clearTask');
+
 window.onclick = function(e) {
     if(!e.target.matches('.dropBtn')) {
         const dropdowns = document.getElementsByClassName('dropdown-content');
@@ -35,6 +38,7 @@ btnAdd.addEventListener('click', function(e) {
     const check = document.createElement('input');
     check.type = 'checkbox';
     tdcheck.className = 'checkbox';
+    tdname.className = 'todoname';
 
     tdcheck.appendChild(check);
     tdname.appendChild(text);
@@ -52,11 +56,45 @@ btnAdd.addEventListener('click', function(e) {
     inputAdd.value = '';
     dropList.value = '';
 
+    const countTasks = countCheckedCheckboxes().countTask;
+    if(countTasks < 2) {
+        tasks.innerHTML = countTasks + ' task left.';
+    } else {
+        tasks.innerHTML = countTasks + ' tasks left.';
+    }
+
     check.addEventListener('change', function(e) {
-        if(e.target.checked) {
-            tdname.className = 'barrato';
+        const countCheck = countCheckedCheckboxes().count;
+        const countTasks = countCheckedCheckboxes().countTask;
+        if(countCheck < 2) {
+            clearTasks.innerHTML = 'Clear ' + countCheck + ' completed task.';
         } else {
-            tdname.className = '';
+            clearTasks.innerHTML = 'Clear ' + countCheck + ' completed tasks.';
+        }
+        if(countTasks < 2) {
+            tasks.innerHTML = countTasks + ' task left.';
+        } else {
+            tasks.innerHTML = countTasks + ' tasks left.';
+        }
+        if(e.target.checked) {
+            let linethrough = value.strike();
+            tdname.innerHTML = linethrough;
+        } else {
+            tdname.innerHTML = value;
         }
     });
 });
+
+function countCheckedCheckboxes() {
+    let count = 0;
+    let countTask = 0;
+    let countClear = document.getElementsByTagName('input');
+    for(let i = 0; i < countClear.length; i++) {
+        if(countClear[i].type === 'checkbox' && countClear[i].checked === true) {
+            count++;
+        } else if (countClear[i].type === 'checkbox' && countClear[i].checked === false) {
+            countTask++;
+        }
+    }
+    return {count, countTask};
+}
